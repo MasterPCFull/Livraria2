@@ -40,12 +40,14 @@ h3{
     }
     
 #principal2{
-         border-left: dashed 1px #696969;
+        border-left: dashed 1px #696969;
+        
         padding: 0px 0px;
         width: 100%;
+        text-align: center;
         background-color:#D3D3D3;
         float:right;
-        text-align: center;
+       
         
     }
 #rodape{

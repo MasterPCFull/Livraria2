@@ -5,6 +5,7 @@ import javax.servlet.http.*;
 import java.util.*;
 import Database.*;
 
+
 public class logado extends HttpServlet {
 
 public void doPost(HttpServletRequest req, HttpServletResponse resp)
@@ -22,7 +23,7 @@ public void doPost(HttpServletRequest req, HttpServletResponse resp)
         out.print("<title>Catalogo De livros</title>");
         out.print("</head>");
         if(intervalTime>120){
-            out.print("<p>Que pena"+"sessao encerrado!</p>");
+            out.print("<p>Que pena!" + "sessao encerrado!</p>");
         }
         out.print("<a href=\"index.jsp\">Efetuar Login</a>");
         out.print("<br>");

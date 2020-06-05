@@ -1,6 +1,7 @@
 <jsp:useBean id="conexao" scope="page" class="Database.Conexaobd"/>
 <jsp:useBean id="usuario" scope="page" class="Database.Usuario"/>    
 <%@page import="javax.servlet.http.*" %>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 
@@ -8,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="css/estilo.css">
         <title>Catalogo de Livros</title>
     </head>
     <body>
@@ -17,7 +18,7 @@
                
         <h1>
         Catalago de Livros    
-          <img src="imagens/Banner.jpg" alt=""/>
+          <img src="imagens/Banner.jpg" alt="">
         </h1>
         </div>
             <div id="principal2">
@@ -30,12 +31,11 @@
                     String senha = request.getParameter("senha");
                     
                     conexao.conectar();
-                    
                     usuario.setConexao(conexao.getConexao());
                     
                     int resultado = usuario.autenticar(nome, senha);
                     
-                    if(resultado==1)
+                    if(resultado==0)
                     {
                         HttpSession sessao = request.getSession();
                         sessao.setAttribute("nome", usuario.getNome());
@@ -48,7 +48,7 @@
                     else{
                      
                      out.println("<h2>Erro! Usuario ou senha estão incorretos.</h2");
-                     out.println("<a href=\"logado.jsp\"> Tente novamente.</h2></a>");
+                     out.println("<a href=\"index.jsp\"> Tente novamente.</h2></a>");
                     }
                     conexao.fechar();
                     %>

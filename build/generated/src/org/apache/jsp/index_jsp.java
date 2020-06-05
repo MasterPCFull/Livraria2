@@ -47,6 +47,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
       Database.Conexaobd conexao = null;
       synchronized (_jspx_page_context) {
         conexao = (Database.Conexaobd) _jspx_page_context.getAttribute("conexao", PageContext.PAGE_SCOPE);
@@ -72,7 +75,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("       \n");
       out.write("        \n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <link  rel=\"stylesheet\" href=\"css\\estilo.css\" type=\"text/css\"/>\n");
+      out.write("        <link  rel=\"stylesheet\" href=\"css/estilo.css\" type=\"text/css\">\n");
       out.write("        <title>Catalogo de Livros</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
@@ -93,12 +96,12 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <img src=\"imagem/\" alt=\"\"/>\n");
       out.write("                    \n");
       out.write("                    \n");
-      out.write("                    <th colspan=\"2\">Autenticar<br></th><tr>\n");
+      out.write("                    <th >Autenticar<br></th><tr>\n");
       out.write("                    <tr><td>Usuario</td></tr>\n");
       out.write("                    <tr><td><input type=\"text\" name=\"nome\"><br></td></tr>\n");
       out.write("                    <tr><td>Senha</td></tr>\n");
       out.write("                    <tr><td><input type=\"password\" name=\"senha\"><br></td></tr>\n");
-      out.write("                  <tr><th colspan=\"2\"><input type=\"submit\" value=\"Entra\"<br></th><tr>\n");
+      out.write("                  <tr><th><input type=\"submit\" value=\"Entra\"<br></th><tr>\n");
       out.write("                </table>\n");
       out.write("                </form>\n");
       out.write("        </div>\n");
@@ -106,7 +109,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <h3>Livros Cadastrados no Catalogo</h3>\n");
       out.write("            <table border=\"0\">\n");
       out.write("                <tr>\n");
-      out.write("                    <td><img src=\"imagens/\" alt=\"\"/></td>\n");
+      out.write("                    <td><img src=\"imagem/logo.jpg\" alt=\"\"></td>\n");
       out.write("                    <td>\n");
       out.write("                        Java como Programa 8 ED<br>\n");
       out.write("                        Deitel<br>\n");

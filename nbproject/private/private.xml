@@ -3,12 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Italo/Documents/NetBeansProjects/livraria2/web/registrar_Livros.jsp</file>
+            <file>file:/C:/Users/Italo/Documents/NetBeansProjects/livraria2/web/logado.jsp</file>
+            <file>file:/C:/Users/Italo/Documents/NetBeansProjects/livraria2/src/java/Database/Conexaobd.java</file>
             <file>file:/C:/Users/Italo/Documents/NetBeansProjects/livraria2/web/cadastra_Usuario.html</file>
+            <file>file:/C:/Users/Italo/Documents/NetBeansProjects/livraria2/web/listar_Livro.jsp</file>
+            <file>file:/C:/Users/Italo/Documents/NetBeansProjects/livraria2/src/java/servlets/logado.java</file>
             <file>file:/C:/Users/Italo/Documents/NetBeansProjects/livraria2/src/java/Database/Usuario.java</file>
             <file>file:/C:/Users/Italo/Documents/NetBeansProjects/livraria2/web/index.jsp</file>
+            <file>file:/C:/Users/Italo/Documents/NetBeansProjects/livraria2/web/atualizar_Livro.jsp</file>
             <file>file:/C:/Users/Italo/Documents/NetBeansProjects/livraria2/web/cadastra_Livro.html</file>
-            <file>file:/C:/Users/Italo/Documents/NetBeansProjects/livraria2/web/cadastra_Editora.html</file>
             <file>file:/C:/Users/Italo/Documents/NetBeansProjects/livraria2/web/autenticacao.jsp</file>
         </group>
     </open-files>

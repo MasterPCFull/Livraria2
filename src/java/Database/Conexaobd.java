@@ -4,7 +4,7 @@ import java.sql.*;
 
         
         
-        public class Conexaobd {
+    public class Conexaobd {
     Connection con;
     public boolean conectar() {
         

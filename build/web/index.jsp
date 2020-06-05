@@ -1,6 +1,9 @@
+
 <%@page import="java.util.ArrayList" %>
 <%@page import="Database.ColecaoLivro" %>
-<%@page import="java.sql.*  " %>
+<%@page import="java.sql.*" %>
+
+
 <jsp:useBean id="conexao" scope="page" class="Database.Conexaobd"/>
 <jsp:useBean id="Livro" scope="page" class="Database.Livro"/>        
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -10,7 +13,7 @@
        
         
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link  rel="stylesheet" href="css\estilo.css" type="text/css"/>
+        <link  rel="stylesheet" href="css/estilo.css" type="text/css">
         <title>Catalogo de Livros</title>
     </head>
     <body>
@@ -31,12 +34,12 @@
                     <img src="imagem/" alt=""/>
                     
                     
-                    <th colspan="2">Autenticar<br></th><tr>
+                    <th >Autenticar<br></th><tr>
                     <tr><td>Usuario</td></tr>
                     <tr><td><input type="text" name="nome"><br></td></tr>
                     <tr><td>Senha</td></tr>
                     <tr><td><input type="password" name="senha"><br></td></tr>
-                  <tr><th colspan="2"><input type="submit" value="Entra"<br></th><tr>
+                  <tr><th><input type="submit" value="Entra"<br></th><tr>
                 </table>
                 </form>
         </div>
@@ -44,7 +47,7 @@
             <h3>Livros Cadastrados no Catalogo</h3>
             <table border="0">
                 <tr>
-                    <td><img src="imagens/" alt=""/></td>
+                    <td><img src="imagem/logo.jpg" alt=""></td>
                     <td>
                         Java como Programa 8 ED<br>
                         Deitel<br>
