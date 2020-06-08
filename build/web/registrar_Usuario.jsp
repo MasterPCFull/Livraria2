@@ -12,35 +12,34 @@
     <div id="topo">     
         <h1>
             Catalogo de Livros
-            <img src="imagens/" alt="banner de livros"/>
+            <img src="imagens/" alt=""/>
         </h1>
     </div>
        <div id="principal2">
     <%
-               /* armazena os valores dos parametros em variaveis */
-           int idusuario = Integer.parseInt(request.getParameter("idusuario"));
-           String nome = request.getParameter("nome");
-           String senha = request.getParameter("senha");
-           
-           conexao.conectar();
-           
-           usuario.setConexao(conexao.getConexao());
-           
-           int resultado = usuario.inserir(idusuario, nome, senha);
-           
-           if(resultado==0){
-               out.println("<h2>Usuario registrado com sucesso!!!</h2>");
-           
-           }else if (resultado==1){
-             
-               out.println("<h2>Usuario ja registrado</h2>");
-           
-           }else{
-           
-               out.println("<h2>Erro ao registrar usuario</h2>");
-           }
-           
-           conexao.fechar();
+        /* armazena os valores dos parametros em variaveis */
+        //int idusuario = Integer.parseInt(request.getParameter("idusuario"));
+        String nome = request.getParameter("nome");
+        String senha = request.getParameter("senha");
+
+        conexao.conectar();
+
+        usuario.setConexao(conexao.getConexao());
+
+        int resultado = usuario.inserir(nome, senha);
+
+        if(resultado == 0){
+            out.println("<h2>Usuario registrado com sucesso!!!</h2>");
+        }else if (resultado == 2){
+            out.println("<h2>Usuario ja registrado</h2>");
+        }else if (resultado == 1){
+            out.println("<h2>Falha na conexão com banco de dados</h2>");
+        }
+        else{
+            out.println("<h2>Erro não detectado</h2>");
+        }
+        
+        conexao.fechar();
     %>
            <a href="logado.jsp">Pagina de Cadastros</a>
        </div>

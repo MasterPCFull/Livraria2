@@ -12,10 +12,10 @@ public void doPost(HttpServletRequest req, HttpServletResponse resp)
         throws ServletException, IOException{
         PrintWriter out;
         resp.setContentType("text/html");
-        out=resp.getWriter();
+        out = resp.getWriter();
         long lastAccessedTime, submitTime,intervalTime;
-        HttpSession sessao=req.getSession();
-        lastAccessedTime=sessao.getLastAccessedTime();
+        HttpSession sessao = req.getSession();
+        lastAccessedTime = sessao.getLastAccessedTime();
         submitTime=System.currentTimeMillis();
         intervalTime=(submitTime-lastAccessedTime)/1000;
         out.print("<html>");
@@ -43,7 +43,7 @@ public void doGet(HttpServletRequest req, HttpServletResponse resp)
         out.print("<p>Sessão Encerrada </p>");
         out.print("</body>");
         out.print("</html>");
-        HttpSession sessao=req.getSession();
+        HttpSession sessao = req.getSession();
         sessao.invalidate();
 }
 }

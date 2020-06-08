@@ -38,15 +38,15 @@
             +"<td>"+rs.getString("editora_ideditora")+"</td>");
             out.print("<td><a href=\"excluir_Livro.jsp?idlivro="
             +rs.getString("idlivro")+ "\">Excluir</a></td>");
-            out.print("<td><a href=\"alterar_Livro.jsp?idlivro="
+            out.print("<td><a href=\"alterar_Livro.jsp? idlivro="
             +rs.getString("idlivro")
-            +"&titulo="+rs.getString("titulo")
+            +"&titulo="+rs.getString("titulo")                    
             +"&autor="+rs.getString("autor")
             +"&ano="+rs.getString("ano")
             +"&preco="+rs.getString("preco")
             +"&foto="+rs.getString("foto")
             +"&editora_ideditora="+rs.getString("editora_ideditora")
-            +"\"></a></td>");
+            +"\">Alterar</a></td>");
         out.print("</tr>");
         }
         out.println("</table>");

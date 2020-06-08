@@ -1,3 +1,4 @@
+<%@ page import="java.sql.*"%>
 <jsp:useBean id="conexao" scope="page" class="Database.Conexaobd"/>
 <jsp:useBean id="Livro" scope="page" class="Database.Livro"/>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -28,7 +29,7 @@
              int ano = Integer.parseInt(request.getParameter("ano"));
              double preco = Double.parseDouble(request.getParameter("preco"));
              String foto = request.getParameter("foto");
-             int editora_ideditora=Integer.parseInt(request.getParameter("editora_ideditora"));
+             int editora_ideditora = Integer.parseInt(request.getParameter("editora_ideditora"));
              
              conexao.conectar();
              

@@ -31,6 +31,18 @@ public class Editora {
             return 0;
    }
    }
+    
+    public ResultSet listarEditoras(){
+        try{
+            ps = con.prepareStatement("SELECT * FROM editora");
+            rs = ps.executeQuery();
+            return rs;
+        }catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } 
+    }
+    
 public boolean inserirEditora(String nome, String cidade){
  try{
      int ideditora=gerarId();

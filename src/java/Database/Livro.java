@@ -82,16 +82,18 @@ e.printStackTrace();
 return false;
 }
 }
+
 public ResultSet listarLivro(){
-try{
-ps = con.prepareStatement("SELECT * FROM livro");
-rs = ps.executeQuery();
-return rs;
-}catch (Exception e) {
-e.printStackTrace();
-return null;
-} 
+    try{
+        ps = con.prepareStatement("SELECT * FROM livro");
+        rs = ps.executeQuery();
+        return rs;
+    }catch (Exception e) {
+        e.printStackTrace();
+        return null;
+    } 
 }
+
 public boolean excluirLivro(int idlivro){
 try{
 ps=con.prepareStatement("DELETE FROM livro WHERE idlivro = ?");

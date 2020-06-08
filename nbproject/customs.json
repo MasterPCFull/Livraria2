@@ -1,5 +1,7 @@
 {
-    "elements": {},
+    "elements": {
+        "form": {}
+    },
     "attributes": {
         "scr": {
             "context": "img"

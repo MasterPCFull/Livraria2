@@ -22,7 +22,7 @@
             </tr> 
             <tr>
             <td><img src="imagens/" alt=""/></td>
-            <td><a href="cadastra_Livro.html"><h3>Cadastra Livro</h3></a></td> 
+            <td><a href="cadastra_Livro.jsp"><h3>Cadastra Livro</h3></a></td> 
             </tr>   
             <tr>
             <td><img src="imagens/" alt=""/></td>
