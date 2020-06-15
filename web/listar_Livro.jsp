@@ -15,7 +15,7 @@
         
         <h1>
       Catalogo de Livros
-      <img src="imagens/" alt="banner de livros"/>
+      <img src="imagens/" alt=""/>
         </h1>
     </div>
         <div id="principal2">
@@ -28,7 +28,8 @@
             out.println("<table border=1px>");
             out.println("<tr><th>Titulo</th><th>Autor</th><th>Ano</th>");
             out.println("<th>Preço</th><th>Foto</th><th>Id Editora</th></tr>");       
-        while (rs.next()){
+        while (rs.next())
+        {
             out.println("<tr>");
             out.println("<td>"+ rs.getString("titulo")+"</td>"
             +"<td>"+rs.getString("autor")+"</td>"
@@ -38,7 +39,7 @@
             +"<td>"+rs.getString("editora_ideditora")+"</td>");
             out.print("<td><a href=\"excluir_Livro.jsp?idlivro="
             +rs.getString("idlivro")+ "\">Excluir</a></td>");
-            out.print("<td><a href=\"alterar_Livro.jsp? idlivro="
+            out.print("<td><a href=\"alterar_Livro.jsp?idlivro="
             +rs.getString("idlivro")
             +"&titulo="+rs.getString("titulo")                    
             +"&autor="+rs.getString("autor")

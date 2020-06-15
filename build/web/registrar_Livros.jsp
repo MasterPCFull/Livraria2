@@ -14,7 +14,7 @@
     <div id="topo">     
         <h1>
             Catalogo de Livros
-            <img src="imagens/" alt="banner de livros"/>
+            <img src="imagens/" alt=""/>
         </h1>
     </div>
         <div id="navegacao">

@@ -24,8 +24,14 @@
         Catalogo de Livros
         <img src="imagem/logo.jpeg" width="520" height="205" alt=""/><br>
         
-        <input type="text" id="txtBusca" placeholder="Buscar um Livro..."/>
-            <a class="" href ="pesquisar_livro.jsp">Buscar</a>
+        <form action="pesquisa_Livro.jsp" method="GET">
+            
+             Pesquise o título: <br><input type="text" name="titulo">            
+            <input type="submit" value="busca"><br><br>
+            
+        </form> 
+       
+        
         </h1>
         </div>
         <div id="navegacao">
@@ -57,16 +63,16 @@
                     <td>
                         Nome:Java como Programa 8 ED<br>
                         Autor:Deitel<br>
-                        Ano:2010<br>Valor:328,99<br>Editora:Folha
+                        Ano:2010<br>Valor:328,99<br>Editora:Abril
                 </td>
                 </tr>
                 <tr>
                     <td> <img src="imagem/img1.jpg" width="200" height="150" alt=""/></td>
                
                     <td>
-                        Nome:O Jardim Secreto-Col.Reencontro Infantil<br>
-                        Autor:Brunett,Frances Hodgson<br>
-                        Ano:2010<br>Valor:55,00<br>Editora:Veja
+                        Nome:Senhor dos Aneis:A sociedade do Anel <br>
+                        Autor:J. R. R. Tolkien <br>
+                        Ano:1949<br>Valor:55,00<br>Editora:Veja
                 </td>
                 
             </table>

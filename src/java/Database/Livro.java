@@ -57,30 +57,37 @@ return true;
 return false;
 }  
 }
-public boolean atualizarLivro(int idlivro, String titulo, String autor, int ano, 
-double preco, String foto, int editora_ideditora){
-try {
-ps=con.prepareStatement("UPDATE livro SET"
-+"titulo = ?,"
-+"autor = ?,"
-+"ano = ?,"
-+"preco = ?,"
-+"foto = ?,"
-+"editora_ideditora=? "
-+"WHERE idlivro=?"); 
-ps.setString(1, titulo); 
-ps.setString(2, autor);
-ps.setInt(3, ano);
-ps.setDouble(4, preco);
-ps.setString(5, foto);
-ps.setInt(6, editora_ideditora);
-ps.setInt(7, idlivro); 
-ps.executeUpdate();
-return true;
-}catch (Exception e){ 
-e.printStackTrace();
-return false;
-}
+
+public boolean atualizar(int idlivro, String titulo, String autor, int ano, double preco, String foto, int editora_ideditora) {
+    try{
+    
+        /**
+         * Isso aqui é CONCATENAR
+         */
+        String sql = "UPDATE livro SET titulo = ?";
+        sql = sql + ", autor = ?, ano = ?, preco = ?, foto = ?,";
+        sql = sql + "editora_ideditora = ? WHERE idlivro = ?;";
+        
+        /**
+         * o método prepareStatement NÃO permite CONCATENAR ou INTERPOLAR
+         */
+        ps=con.prepareStatement(sql);
+
+        ps.setString(1, titulo);
+        ps.setString(2, autor);
+        ps.setInt(3, ano);
+        ps.setDouble(4, preco);
+        ps.setString(5, foto);
+        ps.setInt(6, editora_ideditora);
+        ps.setInt(7, idlivro);
+        ps.executeUpdate();
+        
+        return true;
+    }
+    catch (Exception e) { 
+        // e.printStackTrace();
+        return false;
+    }
 }
 
 public ResultSet listarLivro(){
@@ -128,4 +135,19 @@ e.printStackTrace();
 return null;
 }
 }
+public ResultSet pesquisa(String titulo ){
+    try{
+        ps = con.prepareStatement("SELECT * FROM livro WHERE titulo LIKE ?");
+        ps.setString(1, "%" + titulo + "%");
+        rs = ps.executeQuery();
+        return rs;
+    }catch (Exception e) {
+        e.printStackTrace();
+        return null;
+    } 
 }
+
+}
+
+
+

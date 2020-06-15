@@ -3,8 +3,9 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import java.sql.*;
 
-public final class registrar_005fLivros_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class listar_005fLivro_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -41,6 +42,7 @@ public final class registrar_005fLivros_jsp extends org.apache.jasper.runtime.Ht
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write('\n');
       Database.Conexaobd conexao = null;
       synchronized (_jspx_page_context) {
         conexao = (Database.Conexaobd) _jspx_page_context.getAttribute("conexao", PageContext.PAGE_SCOPE);
@@ -62,54 +64,68 @@ public final class registrar_005fLivros_jsp extends org.apache.jasper.runtime.Ht
       out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
-      out.write("    <head>\n");
+      out.write("<head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <link href=\"css/estilo.css\" rel=\"stylesheet\" type=\"text/css\"/>  \n");
-      out.write("        <title>Registra Livros</title>\n");
+      out.write("        <title>Lista de Livros</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("    <div id=\"tudo\">\n");
-      out.write("    <div id=\"topo\">     \n");
+      out.write("    <div id=\"topo\"> \n");
+      out.write("        \n");
       out.write("        <h1>\n");
-      out.write("            Catalogo de Livros\n");
-      out.write("            <img src=\"imagens/\" alt=\"banner de livros\"/>\n");
+      out.write("      Catalogo de Livros\n");
+      out.write("      <img src=\"imagens/\" alt=\"\"/>\n");
       out.write("        </h1>\n");
       out.write("    </div>\n");
-      out.write("        <div id=\"navegacao\">\n");
-      out.write("            <a href=\"logado.jsp\"><h3>Area Admnistrativa</h3></a>\n");
-      out.write("            <a href=\"index.jsp\"><h3>Sair da Aplicação</h3></a>\n");
-      out.write("        </div>\n");
-      out.write("        <div id=\"principal\">\n");
+      out.write("        <div id=\"principal2\">\n");
+      out.write("            <h2>Livros Cadastrados</h2>\n");
       out.write("            ");
-
-                /* armazena os valores dos parametros em variaveis */
-             String titulo = request.getParameter("titulo");
-             String autor = request.getParameter("autor");
-             int ano = Integer.parseInt(request.getParameter("ano"));
-             double preco = Double.parseDouble(request.getParameter("preco"));
-             String foto = request.getParameter("foto");
-             int editora_ideditora=Integer.parseInt(request.getParameter("editora_ideditora"));
-             
-             conexao.conectar();
-             
-             Livro.setConexao(conexao.getConexao());
-             
-             if(Livro.inserirLivro(titulo, autor, ano, preco, foto, editora_ideditora)){
-                 out.println("<h2>Cadastro realizado com sucesso</h2>");
-             }else{
-                 out.println("<h2>Erro ao tentar efetuar Cadastro</h2>");
-             }
-             conexao.fechar();
-             
+ ResultSet rs;
+            conexao.conectar();
+            Livro.setConexao(conexao.getConexao());
+            rs=Livro.listarLivro();
+        if (rs!=null){
+            out.println("<table border=1px>");
+            out.println("<tr><th>Titulo</th><th>Autor</th><th>Ano</th>");
+            out.println("<th>Preço</th><th>Foto</th><th>Id Editora</th></tr>");       
+        while (rs.next())
+        {
+            out.println("<tr>");
+            out.println("<td>"+ rs.getString("titulo")+"</td>"
+            +"<td>"+rs.getString("autor")+"</td>"
+            +"<td>"+rs.getString("ano")+"</td>"
+            +"<td>"+rs.getString("preco")+"</td>"
+            +"<td>"+rs.getString("foto")+"</td>"
+            +"<td>"+rs.getString("editora_ideditora")+"</td>");
+            out.print("<td><a href=\"excluir_Livro.jsp?idlivro="
+            +rs.getString("idlivro")+ "\">Excluir</a></td>");
+            out.print("<td><a href=\"alterar_Livro.jsp?idlivro="
+            +rs.getString("idlivro")
+            +"&titulo="+rs.getString("titulo")                    
+            +"&autor="+rs.getString("autor")
+            +"&ano="+rs.getString("ano")
+            +"&preco="+rs.getString("preco")
+            +"&foto="+rs.getString("foto")
+            +"&editora_ideditora="+rs.getString("editora_ideditora")
+            +"\">Alterar</a></td>");
+        out.print("</tr>");
+        }
+        out.println("</table>");
+        }else{
+        out.println("<h3>Erro ao lista o Livros</h3>");
+        }
+        conexao.fechar();
+        
       out.write("\n");
-      out.write("             <a href=\"cadastra_Livro.jsp\"><h3>Voltar</h3></a><br><br>\n");
+      out.write("        <br>\n");
+      out.write("        <a href=\"logado.jsp\">Voltar</a><br><br>\n");
       out.write("        </div>\n");
-      out.write("             <div id=\"rodape\">\n");
-      out.write("                 \n");
+      out.write("        <div id=\"rodape\">\n");
+      out.write("            \n");
       out.write("    </div>\n");
       out.write("    </div>\n");
-      out.write("   \n");
-      out.write(" </body>\n");
+      out.write("</body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Italo/Documents/NetBeansProjects/livraria2/src/java/servlets/logado.java</file>
-            <file>file:/C:/Users/Italo/Documents/NetBeansProjects/livraria2/src/java/Database/Usuario.java</file>
-            <file>file:/C:/Users/Italo/Documents/NetBeansProjects/livraria2/web/index.jsp</file>
-            <file>file:/C:/Users/Italo/Documents/NetBeansProjects/livraria2/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/Italo/Documents/NetBeansProjects/livraria2/web/autenticacao.jsp</file>
+            <file>file:/C:/Users/Italo/Documents/NetBeansProjects/livraria2/web/alterar_Livro.jsp</file>
+            <file>file:/C:/Users/Italo/Documents/NetBeansProjects/livraria2/web/listar_Livro.jsp</file>
+            <file>file:/C:/Users/Italo/Documents/NetBeansProjects/livraria2/web/atualizar_Livro.jsp</file>
+            <file>file:/C:/Users/Italo/Documents/NetBeansProjects/livraria2/src/java/Database/Livro.java</file>
         </group>
     </open-files>
 </project-private>
